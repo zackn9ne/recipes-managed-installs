@@ -1,0 +1,27 @@
+Identifier: local.jss.Zoom
+Input:
+  APP_PATH: zoom.us.app
+  CATEGORY: Manifests
+  DOWNLOAD_URL: https://zoom.us/client/latest/ZoomInstallerIT.pkg
+  ENABELED: 'False'
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  MESSAGE_FINISH: '%SOFTWARETITLE% Has just finished updating. To apply the update quit %SOFTWARETITLE% and relaunch.'
+  NAME: zoom.us
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  SOFTWARETITLE: Zoom
+  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
+ParentRecipe: com.github.homebysix.pkg.Zoom
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter

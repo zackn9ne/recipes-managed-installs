@@ -1,0 +1,33 @@
+<!-- you must have a SOFTWARETITLE directive for annoying apps -->
+<policy>
+    <general>
+        <name>Managed Install %SOFTWARETITLE% %GROUP%</name>
+        <enabled>%ENABELED%</enabled>
+	<trigger>CHECKIN</trigger>
+	<trigger_checkin>true</trigger_checkin>
+        <frequency>Ongoing</frequency>
+        <category>
+            <name>%POLICY_CATEGORY%</name>
+        </category>
+    </general>
+    <scope>
+        <all_computers>false</all_computers>
+    </scope>
+    <package_configuration>
+        <!--Package added by JSSImporter-->
+    </package_configuration>
+    <scripts>
+        <!--Scripts added by JSSImporter-->
+    </scripts>
+    <maintenance>
+        <recon>true</recon>
+    </maintenance>
+    <self_service>
+        <!--Icons added by JSSImporter-->
+        <use_for_self_service>false</use_for_self_service>
+    </self_service>
+    <user_interaction>
+        <message_start></message_start>
+        <message_finish>%MESSAGE_FINISH%</message_finish>
+    </user_interaction>
+</policy>

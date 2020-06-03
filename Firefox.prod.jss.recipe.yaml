@@ -1,0 +1,27 @@
+Identifier: local.jss.Firefox
+Input:
+  CATEGORY: Manifests
+  ENABELED: 'False'
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  NAME: Firefox
+  SOFTWARETITLE: Firefox
+  RELEASE: latest
+  LOCALE: en-US
+MinimumVersion: 1.0.4
+ParentRecipe: com.github.autopkg.pkg.Firefox_EN
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter

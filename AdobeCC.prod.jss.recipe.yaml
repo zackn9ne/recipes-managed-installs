@@ -1,0 +1,27 @@
+Identifier: local.jss.AdobeCreativeCloudInstaller
+Input:
+  CATEGORY: Manifests
+  ENABELED: 'False'
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
+  NAME: Creative Cloud
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  SEARCH_PATTERN: (?P<url>https://ccmdl.adobe.com/AdobeProducts/KCCC/CCD/.*?/osx10/ACCC.*?.dmg)
+  SEARCH_URL: https://helpx.adobe.com/download-install/kb/creative-cloud-desktop-app-download.html
+  SOFTWARETITLE: AdobeCC
+  VENDOR: Adobe
+ParentRecipe: com.github.rtrouton.pkg.AdobeCreativeCloudInstaller
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter

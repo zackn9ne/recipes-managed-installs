@@ -1,0 +1,28 @@
+Identifier: com.github.killahquam.jss.slack
+Input:
+  CATEGORY: Manifests
+  ENABELED: 'False'
+  DISABLE_CODE_SIGNATURE_VERIFICATION: false
+  DOWNLOAD_URL: https://slack.com/ssb/download-osx
+  PKG_ID: com.tinyspeck.slackmacgap
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
+  NAME: Slack
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  SOFTWARETITLE: Slack
+  VENDOR: Slack
+ParentRecipe: com.github.killahquam.pkg.slack
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter

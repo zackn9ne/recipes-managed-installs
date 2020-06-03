@@ -1,0 +1,27 @@
+Identifier: local.jss.Google Chrome
+Input:
+  CATEGORY: Manifests
+  ENABELED: 'False'
+  DOWNLOAD_URL: https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+  NAME: Google Chrome
+  OS_REQUIREMENTS: 10.15.x,10.14.x,10.13.x,10.12.x,10.11.x,10.10.x
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  SOFTWARETITLE: Chrome
+ParentRecipe: com.github.autopkg.pkg.googlechrome
+MinimumVersion: 1.0.4
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter
