@@ -1,19 +1,17 @@
-Identifier: local.jss.Zoom
+Identifier: local.jss.airtable
 Input:
-  APP_PATH: zoom.us.app
-  CATEGORY: Manifests
-  DOWNLOAD_URL: https://zoom.us/client/latest/ZoomInstallerIT.pkg
+  CATEGORY: Autopkg
   ENABLED: 'True'
   GROUP: Prod
   GROUP_NAME: Managed-Install-%SOFTWARETITLE%
   GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
-  MESSAGE_FINISH: '%SOFTWARETITLE% Has just finished installing.'
-  NAME: zoom.us
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
   POLICY_CATEGORY: Manifests
   POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
-  SOFTWARETITLE: Zoom
-  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
-ParentRecipe: com.github.homebysix.pkg.Zoom
+  NAME: AirTable
+  SOFTWARETITLE: AirTable
+  VENDOR: AirTable
+ParentRecipe: com.github.autopkg.mikestechshop.pkg.airtable
 Process:
 - Arguments:
     category: '%CATEGORY%'

@@ -1,19 +1,22 @@
-Identifier: local.jss.Zoom
+Identifier: local.jss.Zeplin
 Input:
-  APP_PATH: zoom.us.app
   CATEGORY: Manifests
-  DOWNLOAD_URL: https://zoom.us/client/latest/ZoomInstallerIT.pkg
   ENABLED: 'True'
   GROUP: Prod
   GROUP_NAME: Managed-Install-%SOFTWARETITLE%
   GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
-  MESSAGE_FINISH: '%SOFTWARETITLE% Has just finished installing.'
-  NAME: zoom.us
+  MESSAGE_FINISH: '%NAME% Has just finished installing.'
   POLICY_CATEGORY: Manifests
   POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
-  SOFTWARETITLE: Zoom
-  USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10
-ParentRecipe: com.github.homebysix.pkg.Zoom
+  LOCALE: en-US
+  NAME: Zeplin
+  OS_REQUIREMENTS: 10.15.x,10.14.x,10.13.x,10.12.x,10.11.x,10.10.x,10.9.x
+  RELEASE: latest
+  SOFTWARETITLE: Zeplin
+  SPARKLE_FEED_URL: https://rink.hockeyapp.net/api/2/apps/8926efffe734b6d303d09f41d90c34fc
+  SOFTWARETITLE: Zeplin
+ParentRecipe: com.github.hobbithardcase.pkg.Zeplin
+MinimumVersion: 1.0.4
 Process:
 - Arguments:
     category: '%CATEGORY%'

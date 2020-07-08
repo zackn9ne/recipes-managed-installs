@@ -1,7 +1,7 @@
 Identifier: com.github.killahquam.jss.slack
 Input:
   CATEGORY: Manifests
-  ENABELED: 'False'
+  ENABLED: 'True'
   DISABLE_CODE_SIGNATURE_VERIFICATION: false
   DOWNLOAD_URL: https://slack.com/ssb/download-osx
   PKG_ID: com.tinyspeck.slackmacgap

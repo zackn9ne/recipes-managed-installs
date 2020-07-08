@@ -1,7 +1,7 @@
 Identifier: local.jss.Firefox
 Input:
   CATEGORY: Manifests
-  ENABELED: 'False'
+  ENABLED: 'True'
   GROUP: Prod
   GROUP_NAME: Managed-Install-%SOFTWARETITLE%
   GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'

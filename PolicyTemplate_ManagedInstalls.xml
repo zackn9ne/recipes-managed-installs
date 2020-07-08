@@ -2,7 +2,7 @@
 <policy>
     <general>
         <name>Managed Install %SOFTWARETITLE% %GROUP%</name>
-        <enabled>%ENABELED%</enabled>
+        <enabled>%ENABLED%</enabled>
 	<trigger>CHECKIN</trigger>
 	<trigger_checkin>true</trigger_checkin>
         <frequency>Ongoing</frequency>
@@ -28,6 +28,6 @@
     </self_service>
     <user_interaction>
         <message_start></message_start>
-        <message_finish>%MESSAGE_FINISH%</message_finish>
+        <message_finish>%SOFTWARETITLE% has just finished installing via Manifest.</message_finish>
     </user_interaction>
 </policy>
