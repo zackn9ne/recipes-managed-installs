@@ -5,7 +5,6 @@ Input:
   GROUP: Prod
   GROUP_NAME: Managed-Install-%SOFTWARETITLE%
   GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
-  MESSAGE_FINISH: '%NAME% Has just finished installing.'
   NAME: Creative Cloud
   POLICY_CATEGORY: Manifests
   POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
