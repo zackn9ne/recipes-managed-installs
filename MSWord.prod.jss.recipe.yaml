@@ -1,0 +1,27 @@
+Identifier: local.jss.MicrosoftWord365
+Input:
+  CATEGORY: Manifests
+  ENABLED: 'True'
+  GROUP: Prod
+  GROUP_NAME: Managed-Install-%SOFTWARETITLE%
+  GROUP_TEMPLATE: 'SmartGroupTemplate_ManagedInstalls.xml'
+  POLICY_CATEGORY: Manifests
+  POLICY_TEMPLATE: 'PolicyTemplate_ManagedInstalls.xml'
+  NAME: Microsoft Word  
+  PRODUCTID: '525136'
+  SOFTWARETITLE: Word
+  VENDOR: Microsoft
+  DESCRIPTION: Microsoft Word 
+  DOWNLOADURL: https://go.microsoft.com/fwlink/?linkid=%PRODUCTID%
+ParentRecipe: com.github.rtrouton.pkg.microsoftword365
+Process:
+- Arguments:
+    category: '%CATEGORY%'
+    groups:
+    - name: '%GROUP_NAME%'
+      smart: true
+      template_path: '%GROUP_TEMPLATE%'
+    policy_category: '%POLICY_CATEGORY%'
+    policy_template: '%POLICY_TEMPLATE%'
+    prod_name: '%NAME%'
+  Processor: JSSImporter
